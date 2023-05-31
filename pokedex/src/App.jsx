@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Pokedex from "./pages/Pokedex";
+import PokeData from "./components/PokeData";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div id="App">
+      <HashRouter>
+        <nav className="nav">
+          <Link to="/"> Home </Link>
+          <Link to="/pokedex"> Pokedex </Link>
+          <Link to= "/pokedex/id"/>
+        </nav>
+        <Routes>
+          <Route
+          path="/"
+          element={<Home/>}
+          />
+          <Route
+          path="/pokedex"
+          element={<Pokedex/>}
+          />
+          <Route
+          path="/pokedex/:id"
+          element={<PokeData/>}
+          />
+        </Routes>
+      </HashRouter>
+    </div>
+  );
 }
 
-export default App
+export default App;
