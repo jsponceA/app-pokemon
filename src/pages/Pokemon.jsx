@@ -22,7 +22,7 @@ const Pokemon = ({}) => {
 
   return (
     <div
-      className="container-fluid min-vh-100 mb-5"
+      className="container-fluid min-vh-100 pb-5"
       style={{
         backgroundColor: getColorForType(
           pokemon.types?.length > 0 ? pokemon.types[0].type.name : ""
