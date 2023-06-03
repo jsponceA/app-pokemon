@@ -6,24 +6,27 @@
     --bg-color-green-white: #40ff2f;
 }
 
+
+
 * {
     font-family: 'Fjalla One', sans-serif;
     font-family: 'Inter', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-.form-control:focus {
+.form-control:focus,
+.form-select:focus {
     outline: none;
     box-shadow: none;
     border: var(--bs-border-width) solid var(--bs-border-color);
 }
 
-.bg-main {
-    background-color: var(--bg-body);
-}
+
+
+.bg-main {}
 
 .btn-config {
-    background-color: var(--bg-color-purple);
+    background-color: var(--bg-color-purple) !important;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -31,13 +34,8 @@
     z-index: 2;
 }
 
-.btn-config:hover {
-    border: 1px solid white;
-    background-color: var(--bg-color-purple);
-}
-
 .btn-logout {
-    background-color: var(--bg-color-green-white);
+    background-color: var(--bg-color-green-white) !important;
     position: fixed;
     top: 0;
     right: 0;
@@ -45,22 +43,23 @@
     z-index: 2;
 }
 
-.btn-logout:hover {
-    border: 1px solid white;
-    background-color: var(--bg-color-green-white);
-}
-
 .btn-submit-name {
-    background-color: var(--bg-color-green-white);
+    background-color: var(--bg-color-green-white) !important;
+
 }
 
-.btn-submit-name:hover {
-    background-color: var(--bg-color-green-white);
+
+
+.switch-input {
+    background-color: var(--bs-warning) !important;
+    border: none !important;
+    box-shadow: none !important;
 }
+
 
 .animation-bg {
     position: fixed;
-    z-index: 1;
+    z-index: -1;
     top: -90px;
     right: -90px;
     filter: brightness(200%);
@@ -69,6 +68,22 @@
 .animation-bg img {
     width: 500px;
     animation: spin 2s linear infinite;
+}
+
+.animation-bg--card {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    filter: brightness(200%);
+    width: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.pokemon-img--card {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
 }
 
 @keyframes spin {
